@@ -19,9 +19,8 @@ thinkphp 上的网友"将军"写的 file class
      //统计文件夹大小,单位 B
      File::get_size($dir);
      //检测是否为空文件夹
-     if(File::empty_dir($dir)==true)
-     {
-        echo $dir.'不是空文件夹';
+     if (File::empty_dir($dir)==true && is_dir($dir)) {
+        echo $dir.'是空文件夹';
      }
      //文件缓存与文件读取
      File::cache($name, $value='', $path=DATA_PATH,$cached=true) ;
